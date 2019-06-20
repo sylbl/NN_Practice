@@ -4,8 +4,7 @@ import matplotlib.pyplot as plt
 import math
 
 
-point_num = 200*4
-init_num = 10000
+point_num = 200*6
 
 x = np.arange(0, point_num, 1)
 y5 = np.sin(np.pi/5 * x) / 8
@@ -17,12 +16,14 @@ sinW = y5 + y25 + y75 + y200
 
 plt.plot(x, sinW)
 plt.show()
+plt.savefig("./sinW.png")
 
 # white noise
 sinN = y5 + y25 + y75 + y200 + (1/8*np.random.randn(point_num))
 
 plt.plot(x, sinN)
 plt.show()
+plt.savefig("./sinN.png")
 
 # save csv
 sinData = pd.DataFrame({'sin':sinW,
