@@ -19,7 +19,7 @@ plt.savefig("./sinW.png")
 plt.show()
 
 # white noise
-sinN = y5 + y25 + y75 + y200 + (1/8*np.random.randn(point_num))
+sinN = y5 + y25 + y75 + y200 + (1/16*np.random.randn(point_num))
 
 plt.plot(x, sinN)
 plt.savefig("./sinN.png")
