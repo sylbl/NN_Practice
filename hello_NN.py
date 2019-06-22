@@ -56,7 +56,7 @@ INPUT_LAYER_NUM = INPUT_DAYS
 HIDDEN_LAYER_NUM = 3
 OUTPUT_LAYER_NUM = 1
 TRAIN_RATE = 0.2
-TRAIN_NUM = 1000
+TRAIN_NUM = 100
 
 #入出力ホルダー
 inpData = tf.placeholder(tf.float32, [None, INPUT_LAYER_NUM])
