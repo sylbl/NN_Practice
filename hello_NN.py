@@ -56,7 +56,7 @@ INPUT_LAYER_NUM = INPUT_DAYS
 HIDDEN_LAYER_NUM = 3
 OUTPUT_LAYER_NUM = 1
 TRAIN_RATE = 0.2
-TRAIN_NUM = 10
+TRAIN_NUM = 1000
 
 #入出力ホルダー
 inpData = tf.placeholder(tf.float32, [None, INPUT_LAYER_NUM])
@@ -95,6 +95,7 @@ with tf.Session() as sess:
 
     plt.plot(np.reshape(aData, (1,-1))[0])
     plt.plot(np.reshape(out, (1,-1))[0])
+    plt.savefig("./nn-d"+str(INPUT_DAYS)+"t"+str(TRAIN_NUM)+"r"+str(TRAIN_RATE)+"gaku.png")
     plt.show()
 
     out, loss_ = sess.run([output, loss], feed_dict={inpData: ciData, ansData: caData})
@@ -102,6 +103,7 @@ with tf.Session() as sess:
 
     plt.plot(np.reshape(caData, (1,-1))[0])
     plt.plot(np.reshape(out, (1,-1))[0])
+    plt.savefig("./nn-d"+str(INPUT_DAYS)+"t"+str(TRAIN_NUM)+"r"+str(TRAIN_RATE)+"chk.png")
     plt.show()
 
     
