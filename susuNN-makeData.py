@@ -20,18 +20,18 @@ sinW = prep.minmax_scale(sinW)
 
 # 合成sin波表示
 plt.plot(x, sinW)
-#plt.savefig("./sinW.png")
+plt.savefig("./sinWave.png")
 plt.show()
 
 
 # ホワイトノイズの付加
-sinN = y5 + y25 + y75 + y200 + (1/16*np.random.randn(MAKE_DATA_NUM))
+sinN = y5 + y25 + y75 + y200 + np.random.randn(MAKE_DATA_NUM) / 8
 # 正規化
 sinN = prep.minmax_scale(sinN)
 
 # 合成sin波表示
 plt.plot(x, sinN)
-#plt.savefig("./sinN.png")
+plt.savefig("./sinNoise.png")
 plt.show()
 
 
